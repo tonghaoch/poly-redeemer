@@ -27,7 +27,7 @@ export const config: AppConfig = {
   primaryButtonSelector: 'button[class*="bg-button-primary-bg"]',
 
   // -- Scheduling --
-  cronSchedule: "*/10 * * * *", // every 10 minutes
+  cronSchedule: "3-59/5 * * * *", // every 5 minutes, offset to :03
 
   // -- URLs --
   portfolioUrl: "https://polymarket.com/portfolio",
