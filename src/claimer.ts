@@ -63,7 +63,7 @@ export async function runClaimCycle(
       // Step 2: Wait for confirm modal, click "Claim $X.XX"
       const confirmBtn = page
         .locator(config.primaryButtonSelector)
-        .filter({ hasText: /^Claim \d/ })
+        .filter({ hasText: /^Claim \$\d/ })
         .first()
 
       await confirmBtn.waitFor({
