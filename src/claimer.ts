@@ -47,7 +47,7 @@ export async function runClaimCycle(
   while (true) {
     const claimBtn = page
       .locator(config.primaryButtonSelector)
-      .filter({ hasText: /^Claim$/ })
+      .filter({ hasText: /^(Claim|Redeem)$/ })
       .first()
 
     if ((await claimBtn.count()) === 0) {
@@ -63,7 +63,7 @@ export async function runClaimCycle(
       // Step 2: Wait for confirm modal, click "Claim $X.XX"
       const confirmBtn = page
         .locator(config.primaryButtonSelector)
-        .filter({ hasText: /^Claim \$\d/ })
+        .filter({ hasText: /^(Claim|Redeem) \$\d/ })
         .first()
 
       await confirmBtn.waitFor({
